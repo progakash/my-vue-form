@@ -15,13 +15,18 @@
 
       <h3>Basic your information</h3>
 
-      <label>Title</label>
+      <!-- <label>Title</label>
       <input
         v-model="form.title"
         type="text"
         placeholder="Title"
         class="field"
-      >
+      > -->
+        <BaseInput
+            v-model="form.title"
+            label="Title"
+            type="text"
+        />
 
       <label>Description</label>
       <input
@@ -87,6 +92,7 @@
 </template>
 <script setup>
 import { ref } from 'vue';
+import BaseInput from './baseComponent/BaseInput.vue'
 
 const items = ref(['alu', 'tometo', 'pinia', 'vuex']);
 const form  = ref(
