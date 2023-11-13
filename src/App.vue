@@ -1,11 +1,13 @@
-<script setup>
-</script>
-
 <template>
-  <div>
-   
-  </div>
+  <Form></Form>
 </template>
+<script>
+import Form from './components/Form.vue'
 
-<style scoped>
-</style>
+export default {
+  name: 'main-app',
+  components: {
+    Form,
+  }
+}
+</script>
