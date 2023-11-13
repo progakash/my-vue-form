@@ -1,4 +1,5 @@
-<template>
+<!-- VUE 2 -->
+<!-- <template>
   <Form></Form>
 </template>
 <script>
@@ -10,4 +11,12 @@ export default {
     Form,
   }
 }
+</script> -->
+
+<!-- VUE 3 -->
+<template>
+  <FormVueThree></FormVueThree>
+</template>
+<script setup>
+import FormVueThree from './components/FormVueThree.vue';
 </script>
