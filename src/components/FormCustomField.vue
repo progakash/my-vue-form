@@ -82,7 +82,7 @@ import BaseSelect from './common/BaseSelect.vue'
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {
-        item: '',
+        item: 'hello',
         title: '',
         description: '',
         location: '',
