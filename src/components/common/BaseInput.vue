@@ -1,10 +1,11 @@
 <template>
     <label>{{ label}}</label>
     <input
-        class="field"
+        :modelValue="modelValue"
+        :placeholder="label"
         @input="$emit('update:modelValue', $event.target.value)"
         v-bind="$attrs"
-        :placeholder="label"
+        class="field"
     >
 </template>
 <script>

@@ -92,7 +92,7 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import BaseInput from './baseComponent/BaseInput.vue'
+import BaseInput from './common/BaseInput.vue'
 
 const items = ref(['alu', 'tometo', 'pinia', 'vuex']);
 const form  = ref(
