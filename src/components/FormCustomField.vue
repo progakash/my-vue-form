@@ -2,17 +2,12 @@
     <div>
     <h1>Create an form</h1>
     <form>
-
-      <label>Select a item</label>
-      <select v-model="form.item">
-        <option
-          v-for="option in items"
-          :value="option"
-          :key="option"
-          :selected="option === form.item"
-        >{{ option }}</option>
-      </select>
-
+      <BaseSelect
+        v-model="form.item"
+        label="Select a item"
+        :items="items"
+      />
+      
       <h3>Basic your information</h3>
 
         <BaseInput
@@ -82,8 +77,9 @@
 <script setup>
 import { ref } from 'vue';
 import BaseInput from './common/BaseInput.vue'
+import BaseSelect from './common/BaseSelect.vue'
 
-const items = ref(['alu', 'tometo', 'pinia', 'vuex']);
+const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {
         item: '',

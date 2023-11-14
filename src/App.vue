@@ -1,4 +1,4 @@
-<!-- VUE 2 -->
+<!-- VUE OPTIONAL -->
 <!-- <template>
   <Form></Form>
 </template>
@@ -13,12 +13,12 @@ export default {
 }
 </script> -->
 
-<!-- VUE 3 -->
+<!-- VUE COMPOSITION -->
 <!-- <template>
-  <FormVueThree></FormVueThree>
+  <FormVueComposition></FormVueComposition>
 </template>
 <script setup>
-import FormVueThree from './components/FormVueThree.vue';
+import FormVueComposition from './components/FormVueComposition.vue';
 </script> -->
 
 <!-- CUSTOM FIELD -->

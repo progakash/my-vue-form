@@ -1,11 +1,14 @@
 <template>
-    <label>{{ label }}</label>
-      <select v-model="form.item">
+    <label v-if="label">{{ label }}</label>
+      <select 
+        :value="modelValue"
+        v-bind="{...$attrs, onChange: ($event) => { $emit('update:modelValue', $event.target.value) } }"
+      >
         <option
           v-for="option in items"
           :value="option"
           :key="option"
-          :selected="option === form.item"
+          :selected="option === modelValue"
         >{{ option }}</option>
       </select>
 </template>
@@ -15,6 +18,14 @@ export default {
         label: {
             type: String,
             default: ''
+        },
+        items: {
+          type: [Object, Array],
+          required: true
+        },
+        modelValue: {
+          type: [String, Number],
+          default: ''
         }
     }
 }
