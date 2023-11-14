@@ -14,30 +14,26 @@
       </select>
 
       <h3>Basic your information</h3>
-      
+
         <BaseInput
             v-model="form.title"
             label="Title"
             type="text"
         />
 
-      <label>Description</label>
-      <input
-        v-model="form.description"
-        type="text"
-        placeholder="Description"
-        class="field"
-      />
+      <BaseInput
+            v-model="form.description"
+            label="Description"
+            type="text"
+        />
 
       <h3>Where are your from?</h3>
 
-      <label>Location</label>
-      <input
-        v-model="form.location"
-        type="text"
-        placeholder="Location"
-        class="field"
-      />
+      <BaseInput
+            v-model="form.location"
+            label="Location"
+            type="text"
+        />
 
       <h3>Are cat allowed?</h3>
       <div>

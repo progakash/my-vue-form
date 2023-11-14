@@ -14,9 +14,17 @@ export default {
 </script> -->
 
 <!-- VUE 3 -->
-<template>
+<!-- <template>
   <FormVueThree></FormVueThree>
 </template>
 <script setup>
 import FormVueThree from './components/FormVueThree.vue';
+</script> -->
+
+<!-- CUSTOM FIELD -->
+<template>
+  <FormCustomField></FormCustomField>
+</template>
+<script setup>
+import FormCustomField from './components/FormCustomField.vue';
 </script>
