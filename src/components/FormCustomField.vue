@@ -14,14 +14,12 @@
       </select>
 
       <h3>Basic your information</h3>
-
-      <label>Title</label>
-      <input
-        v-model="form.title"
-        type="text"
-        placeholder="Title"
-        class="field"
-      >
+      
+        <BaseInput
+            v-model="form.title"
+            label="Title"
+            type="text"
+        />
 
       <label>Description</label>
       <input

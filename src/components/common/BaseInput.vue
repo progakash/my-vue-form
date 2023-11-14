@@ -1,14 +1,14 @@
 <template>
     <label>{{ label}}</label>
     <input
-        :modelValue="modelValue"
+        :value="modelValue"
         :placeholder="label"
         @input="$emit('update:modelValue', $event.target.value)"
         v-bind="$attrs"
         class="field"
     >
 </template>
-<script>
+<!-- <script>
 export default {
     props: {
         label: {
@@ -21,4 +21,8 @@ export default {
         }
     }
 }
+</script> -->
+<script setup>
+defineProps(['modelValue', 'label'])
+defineEmits(['update:modelValue'])
 </script>
