@@ -1,9 +1,8 @@
 <template>
     <input
-        type="radio"
-        v-model="form.cats"
-        :value="1"
-        name="cats"
+        type="checkbox"
+        v-model="form.extras.music"
+        class="field"
     />
     <label v-if="label">{{ label }}</label>
 </template>
