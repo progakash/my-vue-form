@@ -53,21 +53,19 @@
 
       <h3>Extra activities</h3>
       <div>
-        <input
-          type="checkbox"
+        <BaseCheckBox
+          label="Sports"
           v-model="form.extras.sport"
-          class="field"
+          type="checkbox"
         />
-        <label>Sports</label>
       </div>
 
       <div>
-        <input
-          type="checkbox"
+        <BaseCheckBox
+          label="Music"
           v-model="form.extras.music"
-          class="field"
+          type="checkbox"
         />
-        <label>Music</label>
       </div>
 
       <button type="submit">Submit</button>
