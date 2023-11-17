@@ -76,8 +76,8 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import BaseInput from './common/BaseInput.vue'
-import BaseSelect from './common/BaseSelect.vue'
+// import BaseInput from './common/BaseInput.vue'
+// import BaseSelect from './common/BaseSelect.vue'
 
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
