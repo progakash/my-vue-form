@@ -5,7 +5,7 @@
       <BaseSelect
         v-model="form.item"
         label="Select a item"
-        :items="items"
+        :options="items"
       />
       
       <h3>Basic your information</h3>
@@ -73,8 +73,6 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue';
-
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {
