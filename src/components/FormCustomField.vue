@@ -42,13 +42,12 @@
       </div>
 
       <div>
-        <input
-          type="radio"
+        <BaseRadio
+          label="No"
           v-model="form.cats"
-          :value="0"
+          type="radio"
           name="cats"
         />
-        <label>No</label>
       </div>
 
       <h3>Extra activities</h3>
@@ -73,6 +72,8 @@
   </div>
 </template>
 <script setup>
+import BaseRadio from './common/BaseRadio.vue';
+
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {

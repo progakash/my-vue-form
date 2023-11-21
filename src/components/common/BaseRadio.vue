@@ -1,9 +1,8 @@
 <template>
     <input
-        type="radio"
-        v-model="form.cats"
-        :value="1"
-        name="cats"
+        :value="modelValue"
+        v-bind="$attrs"
+        @change="$emit('update:modelValue', $event.target.value)"
     />
     <label v-if="label">{{ label }}</label>
 </template>
@@ -13,6 +12,10 @@ export default {
         label: {
             type: String,
             default: ''
+        },
+        modelValue: {
+            type: boolean,
+            default: true
         }
     }
 }
