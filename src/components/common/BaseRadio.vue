@@ -1,8 +1,9 @@
 <template>
     <input
-        :value="modelValue"
+        :value="value"
+        :checked="modelValue === value"
+        @change="$emit('update:modelValue', value)"
         v-bind="$attrs"
-        @change="$emit('update:modelValue', $event.target.value)"
     />
     <label v-if="label">{{ label }}</label>
 </template>
@@ -14,8 +15,12 @@ export default {
             default: ''
         },
         modelValue: {
-            type: boolean,
+            type: [String, Number],
             default: true
+        },
+        value: {
+            type: [String, Number],
+            required: true
         }
     }
 }

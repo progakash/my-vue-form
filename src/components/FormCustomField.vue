@@ -32,19 +32,20 @@
 
       <h3>Are cat allowed?</h3>
       <div>
-        <input
-            type="radio"
-            v-model="form.cats"
-            :value="1"
-            name="cats"
-          />
-        <label>Yes</label>
+        <BaseRadio
+          label="Yes"
+          v-model="form.cats"
+          :value="1"
+          type="radio"
+          name="cats"
+        />
       </div>
 
       <div>
         <BaseRadio
           label="No"
           v-model="form.cats"
+          :value="1"
           type="radio"
           name="cats"
         />
