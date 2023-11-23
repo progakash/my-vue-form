@@ -32,22 +32,11 @@
 
       <h3>Are cat allowed?</h3>
       <div>
-        <BaseRadio
-          label="Yes"
+        <BaseRadioGroup 
           v-model="form.cats"
-          :value="1"
-          type="radio"
           name="cats"
-        />
-      </div>
-
-      <div>
-        <BaseRadio
-          label="No"
-          v-model="form.cats"
-          :value="1"
           type="radio"
-          name="cats"
+          :options="catOptions"
         />
       </div>
 
@@ -89,4 +78,9 @@ const form  = ref(
         }
     }
 );
+
+const catOptions = ref([
+    { label: 'Yes', value: 1 },
+    { label: 'No', value: 0 }
+])
 </script>
