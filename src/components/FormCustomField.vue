@@ -37,6 +37,7 @@
           name="cats"
           type="radio"
           :options="catOptions"
+          vertical
         />
       </div>
 
@@ -62,8 +63,6 @@
   </div>
 </template>
 <script setup>
-import BaseRadio from './common/BaseRadio.vue';
-
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {
