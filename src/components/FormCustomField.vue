@@ -1,7 +1,7 @@
 <template>
     <div>
     <h1>Create an form</h1>
-    <form>
+    <form @submit.prevent="sendForm">
       <BaseSelect
         v-model="form.item"
         label="Select a item"
@@ -63,6 +63,7 @@
   </div>
 </template>
 <script setup>
+import axios from 'axios'
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {
@@ -82,4 +83,17 @@ const catOptions = ref([
     { label: 'Yes', value: 1 },
     { label: 'No', value: 0 }
 ])
+
+const sendForm = (e) => {
+  axios.post(
+    'url', 
+    form.value
+    )
+    .then((response) => {
+      console.log('response', response)
+    })
+    .catch((err) => {
+      console.log('Error', err)
+    })
+}
 </script>
