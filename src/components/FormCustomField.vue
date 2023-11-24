@@ -14,6 +14,7 @@
             v-model="form.title"
             label="Title"
             type="text"
+            :error="titleError"
         />
 
       <BaseInput
@@ -64,6 +65,7 @@
 </template>
 <script setup>
 import axios from 'axios'
+import { useField } from 'vee-validate';
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {
@@ -78,12 +80,10 @@ const form  = ref(
         }
     }
 );
-
 const catOptions = ref([
     { label: 'Yes', value: 1 },
     { label: 'No', value: 0 }
 ])
-
 const sendForm = (e) => {
   axios.post(
     'url', 
@@ -96,4 +96,13 @@ const sendForm = (e) => {
       console.log('Error', err)
     })
 }
+
+const title = useField('title', (value) => {
+  if (!value) {
+    return 'This field is required'
+  }
+  return true
+})
+
+const { errorMessage: titleError } = useField('title')
 </script>
