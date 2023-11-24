@@ -11,11 +11,11 @@
       <h3>Basic your information</h3>
 
         <BaseInput
-            v-model="form.title"
+            v-model="title"
             label="Title"
             type="text"
-            :error="titleError"
         />
+        <span>{{ ErrorMessage }}</span>
 
       <BaseInput
             v-model="form.description"
@@ -65,7 +65,7 @@
 </template>
 <script setup>
 import axios from 'axios'
-import { useField } from 'vee-validate';
+import { ErrorMessage, useField } from 'vee-validate';
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {
@@ -96,13 +96,22 @@ const sendForm = (e) => {
       console.log('Error', err)
     })
 }
-
-const title = useField('title', (value) => {
+const title = ref('');
+const titleVal = useField('title', (value) => {
+  console.log('hello', value)
   if (!value) {
     return 'This field is required'
   }
   return true
 })
 
-const { errorMessage: titleError } = useField('title')
+// const { value, errorMessage } = useField('title', value => {
+//   if (!value) {
+//     return 'This field is required';
+//   }
+//   if (value.length < 8) {
+//     return 'password must be at least 8 characters long';
+//   }
+//   return true;
+// });
 </script>
