@@ -1,7 +1,7 @@
 <template>
     <div>
     <h1>Create an form</h1>
-    <form @submit.prevent="sendForm">
+    <form @submit.prevent="submitForm">
       <BaseSelect
         v-model="form.item"
         label="Select a item"
@@ -14,7 +14,9 @@
             v-model="title"
             label="Title"
             type="text"
+            v-bind="titleAttrs"
         />
+        <span>{{ errors.title }}</span>
         <!-- <span>{{ ErrorMessage }}</span> -->
 
       <BaseInput
@@ -66,6 +68,11 @@
 <script setup>
 import axios from 'axios'
 // import { ErrorMessage, useField } from 'vee-validate';
+import { useForm } from 'vee-validate';
+import * as yup from 'yup';
+
+
+
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {
@@ -96,7 +103,16 @@ const sendForm = (e) => {
       console.log('Error', err)
     })
 }
-const title = ref('');
+//const title = ref('');
+
+
+const { errors, submitForm, defineField } = useForm({
+  validationSchema: yup.object({
+    title: yup.string().title().required()
+  }),
+});
+
+const [title, titleAttrs] = defineField('title');
 // const titleVal = useField('title', (value) => {
 //   console.log('hello', value)
 //   if (!value) {
