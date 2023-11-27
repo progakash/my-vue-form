@@ -15,7 +15,7 @@
             label="Title"
             type="text"
         />
-        <span>{{ ErrorMessage }}</span>
+        <!-- <span>{{ ErrorMessage }}</span> -->
 
       <BaseInput
             v-model="form.description"
@@ -65,7 +65,7 @@
 </template>
 <script setup>
 import axios from 'axios'
-import { ErrorMessage, useField } from 'vee-validate';
+// import { ErrorMessage, useField } from 'vee-validate';
 const items = ref(['option', 'compositon', 'pinia', 'vuex']);
 const form  = ref(
     {
@@ -97,13 +97,13 @@ const sendForm = (e) => {
     })
 }
 const title = ref('');
-const titleVal = useField('title', (value) => {
-  console.log('hello', value)
-  if (!value) {
-    return 'This field is required'
-  }
-  return true
-})
+// const titleVal = useField('title', (value) => {
+//   console.log('hello', value)
+//   if (!value) {
+//     return 'This field is required'
+//   }
+//   return true
+// })
 
 // const { value, errorMessage } = useField('title', value => {
 //   if (!value) {
